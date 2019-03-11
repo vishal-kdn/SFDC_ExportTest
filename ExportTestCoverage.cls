@@ -6,7 +6,7 @@ public class ExportTestCoverage{
         HttpRequest req = new HttpRequest();
         req.setHeader('Authorization', 'Bearer ' + UserInfo.getSessionID());
         req.setHeader('Content-Type', 'application/json');
-        req.setEndpoint(URL.getSalesforceBaseURL().toExternalForm()+'/services/data/v43.0/tooling/query/?q=Select+id,ApexClassorTrigger.Name,NumLinesCovered,NumLinesUncovered+from+ApexCodeCoverageAggregate');
+        req.setEndpoint(Url.getOrgDomainUrl().toExternalForm()+'/services/data/v43.0/tooling/query/?q=Select+id,ApexClassorTrigger.Name,NumLinesCovered,NumLinesUncovered+from+ApexCodeCoverageAggregate');
         req.setMethod('GET');
         Http h = new Http();
         HttpResponse resp = h.send(req);
